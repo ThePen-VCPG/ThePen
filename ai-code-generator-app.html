@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Generator App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-6">AI Code Generator</h1>
+        <form id="codeGeneratorForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="codeType">
+                    Type of Code
+                </label>
+                <select id="codeType" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="">Select a code type</option>
+                    <option value="frontend">Frontend</option>
+                    <option value="backend">Backend</option>
+                    <option value="fullstack">Full Stack</option>
+                    <option value="api">API</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="codePrompt">
+                    Describe Your Project
+                </label>
+                <textarea id="codePrompt" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="4" placeholder="Describe the code you need..."></textarea>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="experienceLevel">
+                    Your Coding Experience
+                </label>
+                <select id="experienceLevel" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="newbie">Newbie (Just starting out)</option>
+                    <option value="beginner">Beginner (Some basic knowledge)</option>
+                    <option value="intermediate">Intermediate (Comfortable with basics)</option>
+                    <option value="advanced">Advanced (Experienced coder)</option>
+                </select>
+            </div>
+            <div class="flex items-center justify-between">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    Generate Code
+                </button>
+            </div>
+        </form>
+        <div id="output" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 hidden">
+            <h2 class="text-xl font-bold mb-4">Generated Code</h2>
+            <pre id="generatedCode" class="bg-gray-100 p-4 rounded"></pre>
+            <h3 class="text-lg font-bold mt-6 mb-2">Instructions</h3>
+            <div id="instructions" class="mb-4"></div>
+            <h3 class="text-lg font-bold mt-6 mb-2">Placement Guidance</h3>
+            <div id="placementGuidance" class="mb-4"></div>
+            <h3 class="text-lg font-bold mt-6 mb-2">Complementary Features</h3>
+            <ul id="complementaryFeatures" class="list-disc pl-5"></ul>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
